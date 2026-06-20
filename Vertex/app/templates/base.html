@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Estilos -->
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   {% block extra_css %}{% endblock %}
 </head>
@@ -20,11 +21,32 @@
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="container">
-      <a href="{{ url_for('main.index') }}" class="nav-logo">
-        <div class="nav-logo-mark">
-          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <span class="nav-logo-name">AS Vertex</span>
+      <a href="{{ url_for('main.index') }}" class="nav-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        
+        <!-- Logo SVG Integrado (Más grande y sin el cuadro verde) -->
+        <svg viewBox="0 0 100 100" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="vertexGrad" x1="10%" y1="0%" x2="90%" y2="100%">
+              <stop offset="0%" stop-color="#9333EA" />
+              <stop offset="100%" stop-color="#10B981" />
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#vertexGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 22 85 L 50 15 L 78 85" />
+            <path d="M 50 15 L 50 55 L 12 70" />
+            <path d="M 50 55 L 70 65" />
+          </g>
+        </svg>
+
+        <!-- Texto en blanco para contraste elegante -->
+        <span class="nav-logo-name" style="
+          font-weight: 700; 
+          font-size: 1.35rem; 
+          letter-spacing: -0.5px;
+          background: linear-gradient(90deg, #9333EA 0%, #10B981 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;">AS Vertex</span>
       </a>
 
       <ul class="nav-links" id="navLinks">
