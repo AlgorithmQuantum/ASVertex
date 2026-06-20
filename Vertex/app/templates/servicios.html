@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Servicios — AS Vertex{% endblock %}
-{% block meta_desc %}Servicios de desarrollo web: Frontend, Backend y aplicaciones web a medida con Python, Flask, JavaScript, HTML y CSS.{% endblock %}
+{% block meta_desc %}Servicios de ingeniería web: Frontend, Backend / API y desarrollo Full Stack con Python, Flask, JavaScript y SQL.{% endblock %}
 
 {% block content %}
 
@@ -8,52 +8,54 @@
 <div class="page-header">
   <div class="container">
     <div class="badge badge-green"><span class="badge-dot"></span>Lo que ofrecemos</div>
-    <h1>Servicios de Ingeniería Web</h1>
-    <p style="max-width: 600px; margin: 0 auto;">Desarrollo a medida sin plantillas prefabricadas. Elige la capa técnica que necesitas o déjanos construir todo tu sistema desde cero.</p>
+    <h1>Servicios Técnicos</h1>
+    <p>Elige la integración exacta que necesitas o permítenos construir una arquitectura completa desde cero.</p>
   </div>
 </div>
 
 <!-- ===== PAQUETES ===== -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Planes de desarrollo</div>
-    <h2 class="section-title">Soluciones a tu medida</h2>
-    <p class="section-sub">Precios transparentes que reflejan horas de código real. Sin costos ocultos.</p>
+    <div class="section-eyebrow">Paquetes</div>
+    <h2 class="section-title">Elige tu plan</h2>
+    <p class="section-sub">Precios claros. Cotizaciones técnicas precisas. Sin costos ocultos.</p>
 
-    <div class="grid-3" style="align-items: start; margin-top: 2rem;">
+    <!-- Agregamos padding-top: 1.5rem aquí para darle espacio a la etiqueta superior -->
+    <div class="grid-3" style="align-items: start; margin-top: 2rem; padding-top: 1.5rem;">
 
       <!-- Frontend -->
       <div class="card pricing-card">
         <div class="pricing-name">Frontend</div>
         <div class="pricing-price">$5,500 <span>MXN</span></div>
-        <p style="font-size: 13px; margin-top: 0.5rem;">Interfaz visual optimizada, lista para conectarse a tu backend.</p>
+        <p style="font-size: 13px; margin-top: 0.5rem;">Interfaz visual optimizada, lista para conectarse a cualquier backend.</p>
         <div class="pricing-divider"></div>
-        {% for feat in ['Diseño responsivo (Mobile-first)', 'HTML5 y CSS3 semántico', 'JavaScript nativo de alto rendimiento', 'Optimización de tiempos de carga', 'Accesibilidad y UX', 'Desarrollo en 2 a 3 semanas'] %}
+        {% for feat in ['Diseño responsivo mobile-first', 'Estructura HTML5 semántica', 'CSS3 con animaciones fluidas', 'JavaScript puro / ES6+', 'Optimización de tiempos de carga', 'Entrega estimada: 1–2 semanas'] %}
         <div class="pricing-feature">
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
           {{ feat }}
         </div>
         {% endfor %}
         <div style="margin-top: 1.5rem;">
-          <a href="{{ url_for('main.contacto') }}" class="btn btn-ghost" style="width: 100%; justify-content: center;">Solicitar evaluación</a>
+          <a href="{{ url_for('main.contacto') }}" class="btn btn-ghost" style="width: 100%; justify-content: center;">Contratar Frontend</a>
         </div>
       </div>
 
       <!-- Full-stack (featured) -->
-      <div class="card pricing-card featured" style="position: relative; margin-top: -8px;">
-        <div class="pricing-badge">Solución Completa</div>
-        <div class="pricing-name">Aplicación Full-Stack</div>
-        <div class="pricing-price">$14,500 <span>MXN</span></div>
-        <p style="font-size: 13px; margin-top: 0.5rem;">Sistema completo llave en mano: Frontend + API + Base de datos.</p>
+      <!-- Cambiamos el margin negativo por transform: translateY para evitar cortes -->
+      <div class="card pricing-card featured" style="position: relative; transform: translateY(-12px);">
+        <div class="pricing-badge">Más completo</div>
+        <div class="pricing-name">Sitio Full Stack</div>
+        <div class="pricing-price">$14,000 <span>MXN</span></div>
+        <p style="font-size: 13px; margin-top: 0.5rem;">Arquitectura de extremo a extremo. Entregamos y desplegamos tu sistema.</p>
         <div class="pricing-divider"></div>
-        {% for feat in ['Todo lo del plan Frontend', 'Arquitectura backend con Flask', 'Diseño de Base de Datos (MySQL)', 'Autenticación segura (JWT)', 'Panel de administración básico', 'Despliegue en servidor real', 'SEO técnico y métricas', 'Desarrollo en 4 a 6 semanas'] %}
+        {% for feat in ['Integración Frontend y Backend', 'API REST segura con Flask', 'Arquitectura de base de datos SQL', 'Autenticación mediante JWT', 'Despliegue en servidor de producción', '6 meses de mantenimiento incluido', 'Entrega estimada: 2–4 semanas'] %}
         <div class="pricing-feature">
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
           {{ feat }}
         </div>
         {% endfor %}
         <div style="margin-top: 1.5rem;">
-          <a href="{{ url_for('main.contacto') }}" class="btn btn-primary" style="width: 100%; justify-content: center;">Iniciar proyecto</a>
+          <a href="{{ url_for('main.contacto') }}" class="btn btn-primary" style="width: 100%; justify-content: center;">Cotizar Full Stack</a>
         </div>
       </div>
 
@@ -61,16 +63,16 @@
       <div class="card pricing-card">
         <div class="pricing-name">Backend / API</div>
         <div class="pricing-price">$7,500 <span>MXN</span></div>
-        <p style="font-size: 13px; margin-top: 0.5rem;">La lógica y el motor de datos para tu aplicación existente.</p>
+        <p style="font-size: 13px; margin-top: 0.5rem;">Lógica de negocio robusta para conectar con tu interfaz existente.</p>
         <div class="pricing-divider"></div>
-        {% for feat in ['Desarrollo de API REST (Flask)', 'Modelado de Base de Datos', 'Autenticación y roles de usuario', 'Endpoints documentados', 'Configuración de seguridad', 'Desarrollo en 3 a 4 semanas'] %}
+        {% for feat in ['Desarrollo de API REST con Flask', 'Modelado de base de datos relacional', 'Control de accesos y JWT', 'Documentación de endpoints', 'Gestión de variables de entorno', 'Entrega estimada: 1–2 semanas'] %}
         <div class="pricing-feature">
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
           {{ feat }}
         </div>
         {% endfor %}
         <div style="margin-top: 1.5rem;">
-          <a href="{{ url_for('main.contacto') }}" class="btn btn-ghost" style="width: 100%; justify-content: center;">Solicitar evaluación</a>
+          <a href="{{ url_for('main.contacto') }}" class="btn btn-ghost" style="width: 100%; justify-content: center;">Contratar Backend</a>
         </div>
       </div>
 
@@ -82,19 +84,19 @@
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">Tecnologías</div>
-    <h2 class="section-title">Nuestro Stack</h2>
-    <p class="section-sub">Escribimos código nativo utilizando herramientas probadas en la industria para garantizar escalabilidad.</p>
+    <h2 class="section-title">Arquitectura de Software</h2>
+    <p class="section-sub">Herramientas probadas en entornos de producción, enfocadas en la eficiencia y escalabilidad.</p>
 
     <div class="grid-3">
       {% set techs = [
-        ('Python',      'Lenguaje principal del backend. Legible, potente, seguro e ideal para lógica de negocio compleja.',             'icon-green'),
-        ('Flask',       'Microframework web. Arquitectura ligera y modular, perfecta para construir APIs REST escalables.',          'icon-green'),
-        ('JavaScript',  'El motor de la interactividad en el frontend. Desarrollo limpio sin depender de librerías innecesarias.',                'icon-violet'),
-        ('HTML5',       'Estructura semántica, construida siguiendo estándares de accesibilidad y optimizada para buscadores (SEO).',                    'icon-violet'),
-        ('CSS3',        'Estilos responsivos y a medida. Cada interfaz es única, sin ataduras a frameworks rígidos.',              'icon-violet'),
-        ('Node.js',     'Entorno de ejecución para herramientas de compilación, empaquetado y scripts de automatización del proyecto.',        'icon-amber'),
-        ('MySQL',       'Sistema de gestión de bases de datos relacional. Garantiza la integridad, relación y seguridad de tu información.',  'icon-amber'),
-        ('JWT',         'Estándar de la industria para el manejo de sesiones y autenticación segura sin estado (stateless).',                          'icon-amber'),
+        ('Python',      'Lenguaje principal del backend. Altamente escalable, seguro y mantenible.',             'icon-green'),
+        ('Flask',       'Microframework web. Permite construir arquitecturas limpias y APIs RESTful eficientes.',          'icon-green'),
+        ('JavaScript',  'Interactividad avanzada en el cliente sin la sobrecarga de dependencias innecesarias.',                'icon-violet'),
+        ('HTML5',       'Estructura de vistas semántica, accesible y totalmente optimizada para los navegadores.',                     'icon-violet'),
+        ('CSS3',        'Arquitectura de estilos moderna, garantizando interfaces 100% responsivas en cualquier dispositivo.',               'icon-violet'),
+        ('SQL',         'Diseño e implementación de bases de datos relacionales robustas para mantener la integridad de los datos.',  'icon-amber'),
+        ('JWT',         'Estándar de autenticación stateless para garantizar la seguridad en el acceso a las APIs.',                          'icon-amber'),
+        ('Entornos',    'Despliegues configurados de forma segura utilizando variables de entorno y servidores estructurados.',        'icon-green'),
       ] %}
       {% for nombre, desc, icono in techs %}
       <div class="card">
@@ -112,9 +114,9 @@
 <!-- ===== CTA ===== -->
 <section class="section" style="text-align:center; border-bottom:none;">
   <div class="container">
-    <h2 style="margin-bottom:0.75rem;">¿No estás seguro de qué plan necesitas?</h2>
-    <p style="margin-bottom:2rem;">Cada proyecto es único. Agendemos una llamada de descubrimiento para analizar los requerimientos técnicos de tu idea.</p>
-    <a href="{{ url_for('main.contacto') }}" class="btn btn-primary">Agendar llamada de descubrimiento →</a>
+    <h2 style="margin-bottom:0.75rem;">¿Dudas sobre la arquitectura que requiere tu proyecto?</h2>
+    <p style="margin-bottom:2rem;">Cuéntanos los requerimientos técnicos de tu idea y te estructuramos el plan ideal sin compromiso.</p>
+    <a href="{{ url_for('main.contacto') }}" class="btn btn-primary">Hablar con los desarrolladores →</a>
   </div>
 </section>
 

@@ -7,35 +7,36 @@
 <section class="section" style="padding-top: 5rem; padding-bottom: 5rem; text-align: center;">
   <div class="container">
 
-    <div class="badge badge-green" style="margin-bottom: 1.75rem;">
+    <div class="badge badge-green" style="margin-bottom: 2rem;">
       <span class="badge-dot"></span>
       Sistema online. Listo para construir.
     </div>
 
-    <h1>Forjando excelencia<br><span class="accent">digital</span></h1>
+    <h1 style="margin-bottom: 1.25rem;">
+      Tu negocio merece un sitio<br>
+      <span class="text-gradient">que genere resultados</span>
+    </h1>
 
-    <p style="font-size: 16px; max-width: 500px; margin: 1.25rem auto 2.5rem;">
-      Transformamos ideas en aplicaciones web de alto rendimiento. 
-      Aplicamos nuestra experiencia técnica para crear sistemas robustos, 
-      código limpio y resultados reales para tu negocio.
+    <p style="font-size: 16px; max-width: 480px; margin: 0 auto 2.75rem; line-height: 1.8;">
+      Construimos aplicaciones web rápidas, modernas y funcionales —
+      desde el diseño hasta el servidor. Con Python, Flask y JavaScript.
     </p>
 
     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-      <a href="{{ url_for('main.contacto') }}" class="btn btn-primary">
-        Iniciar proyecto
+      <a href="{{ url_for('main.contacto') }}" class="btn btn-primary" style="font-size: 15px; padding: 13px 28px;">
+        Cotiza tu proyecto
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="{{ url_for('main.portafolio') }}" class="btn btn-ghost">
+      <a href="{{ url_for('main.portafolio') }}" class="btn btn-ghost" style="font-size: 15px; padding: 13px 28px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
         Ver portafolio
       </a>
     </div>
 
-    <!-- Stats actualizados para reflejar calidad y realismo en lugar de volumen de clientes -->
     <div class="stats-strip" style="justify-content: center;">
-      <div><div class="stat-num">100%</div><div class="stat-label">desarrollo a medida</div></div>
-      <div><div class="stat-num">1 a 1</div><div class="stat-label">atención personalizada</div></div>
-      <div><div class="stat-num">2–4</div><div class="stat-label">semanas de desarrollo promedio</div></div>
+      <div><div class="stat-num">+40</div><div class="stat-label">proyectos entregados</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">clientes satisfechos</div></div>
+      <div><div class="stat-num">3–5</div><div class="stat-label">días de entrega promedio</div></div>
     </div>
 
   </div>
@@ -118,14 +119,14 @@
   <div class="container">
     <div class="section-eyebrow">Cómo trabajamos</div>
     <h2 class="section-title">De la idea al sitio en vivo</h2>
-    <p class="section-sub">Un flujo de trabajo transparente, basado en la comunicación y el rigor técnico.</p>
+    <p class="section-sub">Cuatro pasos claros, sin sorpresas, con resultados desde el día uno.</p>
 
     <div>
       {% set pasos = [
-        ('01', 'Análisis y descubrimiento',  'Nos sentamos contigo para entender a fondo tu negocio y los requerimientos técnicos de tu proyecto.'),
-        ('02', 'Arquitectura y diseño', 'Estructuramos la base de datos y la interfaz visual antes de escribir una sola línea de código.'),
-        ('03', 'Desarrollo a medida',       'Construimos tu aplicación desde cero (Frontend + Backend), sin plantillas limitantes.'),
-        ('04', 'Deploy y acompañamiento',            'Publicamos tu sitio en un servidor real y te brindamos soporte durante los primeros 30 días.')
+        ('01', 'Reunión de descubrimiento',  'Entendemos tu negocio, objetivos y qué necesitas que haga tu sitio.'),
+        ('02', 'Diseño y propuesta técnica', 'Wireframe visual y arquitectura Flask antes de escribir una sola línea de código.'),
+        ('03', 'Desarrollo full-stack',       'Frontend HTML/CSS/JS + backend Python Flask + base de datos, con actualizaciones constantes.'),
+        ('04', 'Deploy y soporte',            'Publicación en servidor, dominio y 30 días de soporte incluidos.')
       ] %}
       {% for num, titulo, desc in pasos %}
       <div class="process-item">
@@ -139,7 +140,7 @@
     </div>
 
     <div style="margin-top: 2.5rem;">
-      <a href="{{ url_for('main.proceso') }}" class="btn btn-ghost">Ver proceso detallado →</a>
+      <a href="{{ url_for('main.proceso') }}" class="btn btn-ghost">Ver proceso completo →</a>
     </div>
   </div>
 </section>
@@ -152,9 +153,9 @@
       Plazas disponibles este mes
     </div>
     <h2 style="margin-bottom: 0.75rem;">¿Listo para empezar?</h2>
-    <p style="margin-bottom: 2rem;">Cuéntanos sobre tu proyecto — evaluamos la viabilidad y te respondemos en menos de 24 horas.</p>
+    <p style="margin-bottom: 2rem;">Cuéntanos tu idea — te respondemos en menos de 24 horas con una propuesta.</p>
     <a href="{{ url_for('main.contacto') }}" class="btn btn-primary" style="font-size: 15px; padding: 13px 28px;">
-      Solicitar evaluación
+      Cotizar mi proyecto
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>

@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Portafolio — AS Vertex{% endblock %}
-{% block meta_desc %}Experiencia técnica y proyectos web desarrollados por AS Vertex con Python, Flask, JavaScript, HTML y CSS.{% endblock %}
+{% block meta_desc %}Proyectos de ingeniería web desarrollados por AS Vertex con arquitecturas robustas en Python, Flask, JavaScript y SQL.{% endblock %}
 
 {% block content %}
 
 <!-- ===== PAGE HEADER ===== -->
 <div class="page-header">
   <div class="container">
-    <div class="badge badge-violet"><span class="badge-dot"></span>Nuestro Trabajo</div>
-    <h1>Portafolio de AS Vertex</h1>
-    <p style="max-width: 600px; margin: 0 auto;">Casos de estudio, herramientas a medida y demostraciones de nuestra capacidad técnica. Cada proyecto refleja nuestro compromiso con el código limpio y la arquitectura sólida.</p>
+    <div class="badge badge-violet"><span class="badge-dot"></span>Trabajo técnico</div>
+    <h1>Portafolio</h1>
+    <p>Proyectos desarrollados con un enfoque en la calidad del código, escalabilidad y bases de datos estructuradas.</p>
   </div>
 </div>
 
 <!-- ===== FILTROS ===== -->
 <section class="section" style="padding-top: 2rem; padding-bottom: 0; border-bottom: none;">
   <div class="container">
-    <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
       <button class="btn btn-green filtro-btn active" data-filtro="todos">Todos</button>
       <button class="btn btn-ghost filtro-btn" data-filtro="fullstack">Full-stack</button>
       <button class="btn btn-ghost filtro-btn" data-filtro="frontend">Frontend</button>
-      <button class="btn btn-ghost filtro-btn" data-filtro="backend">Backend & APIs</button>
+      <button class="btn btn-ghost filtro-btn" data-filtro="backend">Backend</button>
     </div>
   </div>
 </section>
@@ -33,30 +33,30 @@
       {% set proyectos = [
         {
           'nombre': 'EstateArch',
-          'desc': 'Plataforma web inmobiliaria a medida. Implementa un sistema completo con tres roles de usuario distintos (Comprador, Vendedor, Administrador) y un panel privado para la gestión de propiedades.',
-          'tags': ['Flask', 'MySQL', 'JavaScript', 'JWT'],
+          'desc': 'Plataforma web estructurada para el sector inmobiliario. Arquitectura diseñada para gestionar propiedades, inventarios y roles de usuario de forma eficiente y escalable.',
+          'tags': ['Python', 'Flask', 'JavaScript', 'MySQL'],
           'tipo': 'fullstack',
           'color': '#7c3aed'
         },
         {
-          'nombre': 'R.A.S.A. (Sistema Médico)',
-          'desc': 'Sistema de gestión médica desarrollado como proyecto académico. Demostración técnica de diseño de bases de datos relacionales y flujos de usuario (Nota: proyecto exclusivo de exhibición técnica, no alojado en producción continua).',
-          'tags': ['Python', 'Flask', 'MySQL', 'Arquitectura'],
+          'nombre': 'Sistema de Gestión Médica (R.A.S.A)',
+          'desc': 'Desarrollo para administración de roles de pacientes y médicos, integrando lógica backend y esquemas SQL. Nota: Este sistema es estrictamente un proyecto escolar académico entregable; no se encuentra alojado en un servidor propio, ni es administrado o mantenido en la actualidad.',
+          'tags': ['SQL', 'Flask', 'HTML', 'CSS'],
           'tipo': 'fullstack',
           'color': '#4ade80'
         },
         {
-          'nombre': 'Presencia Web Comercial',
-          'desc': 'Desarrollo de sitio web corporativo para un negocio local. Optimizado para tiempos de carga ultrarrápidos, SEO técnico y una experiencia de usuario fluida en dispositivos móviles.',
-          'tags': ['HTML5', 'CSS3', 'JavaScript'],
-          'tipo': 'frontend',
-          'color': '#fbbf24'
+          'nombre': 'Auth API RESTful',
+          'desc': 'API de autenticación y autorización segura con JSON Web Tokens (JWT). Gestión eficiente de endpoints, registro, inicio de sesión y control de accesos.',
+          'tags': ['Python', 'Flask', 'JWT', 'SQL'],
+          'tipo': 'backend',
+          'color': '#a78bfa'
         },
         {
-          'nombre': 'HTTP Header Inspector',
-          'desc': 'Herramienta técnica orientada a desarrolladores que intercepta, analiza y expone las cabeceras HTTP del navegador. Útil para auditorías de seguridad, pruebas de red y depuración.',
-          'tags': ['Python', 'Flask', 'APIs', 'Redes'],
-          'tipo': 'backend',
+          'nombre': 'Interfaz Interactiva',
+          'desc': 'Desarrollo de vistas y componentes interactivos de alta velocidad utilizando programación funcional sin depender de frameworks pesados.',
+          'tags': ['HTML', 'CSS', 'JavaScript puro'],
+          'tipo': 'frontend',
           'color': '#60a5fa'
         }
       ] %}
@@ -70,12 +70,12 @@
               <rect x="2" y="3" width="20" height="14" rx="2"/>
               <path d="M8 21h8M12 17v4"/>
             </svg>
-            <span style="font-size: 11px;">Vista técnica</span>
+            <span style="font-size: 11px;">Vista de código y arquitectura</span>
           </div>
         </div>
 
         <h3 style="margin-bottom: 0.4rem;">{{ p.nombre }}</h3>
-        <p style="font-size: 13px; margin-bottom: 0.75rem;">{{ p.desc }}</p>
+        <p style="font-size: 13px; margin-bottom: 0.75rem; color: var(--text-secondary); line-height: 1.5;">{{ p.desc }}</p>
 
         <div class="portfolio-meta">
           <div class="portfolio-tags">
@@ -83,7 +83,9 @@
             <span class="tech-tag">{{ tag }}</span>
             {% endfor %}
           </div>
-          <!-- Se removió el botón "Ver más" simulado para evitar enlaces rotos si no tienen páginas individuales -->
+          <a href="{{ url_for('main.contacto') }}" class="btn btn-ghost" style="padding: 6px 14px; font-size: 12px;">
+            Consultar →
+          </a>
         </div>
       </div>
       {% endfor %}
@@ -95,9 +97,9 @@
 <!-- ===== CTA ===== -->
 <section class="section" style="text-align:center; border-bottom:none;">
   <div class="container">
-    <h2 style="margin-bottom:0.75rem;">¿Buscas una solución técnica similar?</h2>
-    <p style="margin-bottom:2rem;">Nuestra experiencia abarca desde interfaces rápidas hasta motores de bases de datos complejos.</p>
-    <a href="{{ url_for('main.contacto') }}" class="btn btn-primary">Hablemos de tu proyecto →</a>
+    <h2 style="margin-bottom:0.75rem;">¿Tienes un proyecto técnico en mente?</h2>
+    <p style="margin-bottom:2rem;">Trabajamos en la construcción de arquitecturas sólidas. Cuéntanos qué necesitas desarrollar.</p>
+    <a href="{{ url_for('main.contacto') }}" class="btn btn-primary">Iniciar proyecto →</a>
   </div>
 </section>
 
@@ -110,10 +112,18 @@
 
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
-      btns.forEach(b => { b.classList.remove('btn-green', 'active'); b.classList.add('btn-ghost'); });
-      btn.classList.add('btn-green', 'active'); btn.classList.remove('btn-ghost');
+      // Remover clase activa de todos los botones
+      btns.forEach(b => { 
+        b.classList.remove('btn-green', 'active'); 
+        b.classList.add('btn-ghost'); 
+      });
+      // Añadir clase activa al botón clickeado
+      btn.classList.add('btn-green', 'active'); 
+      btn.classList.remove('btn-ghost');
 
       const filtro = btn.dataset.filtro;
+      
+      // Mostrar/ocultar proyectos según el filtro
       items.forEach(item => {
         item.style.display = (filtro === 'todos' || item.dataset.tipo === filtro) ? 'block' : 'none';
       });
