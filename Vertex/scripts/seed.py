@@ -12,6 +12,13 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# Carga el .env ANTES de construir la app, para que el seed use la misma
+# DATABASE_URL (PostgreSQL) y las credenciales ADMIN_SEED_* que la web.
+# Sin esto, create_app() caería al SQLite por defecto y sembraría otra BD.
+from dotenv import load_dotenv  # noqa: E402
+
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env'))
+
 from app import create_app  # noqa: E402
 from app.extensions import db  # noqa: E402
 from app.models.admin import Administrador, Permiso, Rol  # noqa: E402
