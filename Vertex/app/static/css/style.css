@@ -50,6 +50,10 @@
 
   /* Contenedor */
   --container-pad: clamp(1rem, 5vw, 2rem);
+
+  /* Ancho de lectura (measure) para texto largo.
+     ~70-80 caracteres por línea a 13-16px: dentro del rango legible. */
+  --measure: 680px;
 }
 
 html { scroll-behavior: smooth; }
@@ -236,8 +240,19 @@ p  { color: var(--text-secondary); line-height: 1.75; }
   box-shadow: 0 0 36px rgba(124,58,237,0.40);
   transform: translateY(-2px);
 }
+/* Tamaño grande: CTA principal de hero y cierre de página. Antes se
+   repetía como `font-size:15px; padding:13px 28px` inline en 9 sitios.
+   Aquí es fluido: escala hacia abajo en móvil y topa en los mismos
+   valores de desktop. */
+.btn-lg {
+  font-size: clamp(14px, 1.6vw, 15px);
+  padding: clamp(11px, 1.8vw, 13px) clamp(22px, 3.5vw, 28px);
+}
 .btn-ghost {
-  background: rgba(255,255,255,0.05); color: var(--text-secondary);
+  /* Texto en --text-primary (token existente) en vez de --text-secondary:
+     el CTA secundario era demasiado tenue para leerse. La jerarquía la
+     sigue marcando el relleno violeta del primario, no el atenuado. */
+  background: rgba(255,255,255,0.05); color: var(--text-primary);
   border: 0.5px solid var(--border-med);
 }
 .btn-ghost:hover {
@@ -499,9 +514,18 @@ select option { background: var(--bg-card); }
 /* Páginas legales: los <strong> dentro del texto traducido resaltan en primario */
 .legal strong { color: var(--text-primary); font-weight: 700; }
 .legal a { color: var(--green); }
+/* Encabezados de sección legal (antes repetidos 18× como style inline
+   idéntico). Mismos valores: no cambia el aspecto, unifica el patrón. */
+.legal h2 { font-size: 20px; margin-bottom: 1rem; }
 
 /* ---------- Footer ---------- */
 .footer { border-top: 0.5px solid var(--border); padding: clamp(1.5rem, 3vw, 2.25rem) 0; }
+/* Encabezado de columna del footer (antes repetido 3× como style inline
+   idéntico). Mismos valores: no cambia el aspecto, unifica el patrón. */
+.footer-heading {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 0.85rem;
+}
 .footer-inner {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: var(--space-sm);
@@ -664,6 +688,46 @@ select option { background: var(--bg-card); }
   .nav-cta:hover,
   .tech-tag:hover { transform: none; }
 }
+
+/* ── Focus-visible: anillo de foco de teclado ─────────────────────
+   Antes solo los inputs tenían estado de foco. Botones, enlaces,
+   tarjetas-enlace y filtros no mostraban nada al navegar con Tab.
+   :focus-visible se activa SOLO por teclado (no al hacer click con
+   mouse), así el anillo no molesta al usuario de puntero.
+   Reutiliza --violet-light (token ya existente): no añade tonos. */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.card:focus-visible,
+.faq-card:focus-visible,
+.nav-toggle:focus-visible,
+.lang-link:focus-visible,
+.filtro-btn:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--violet-light);
+  outline-offset: 3px;
+}
+
+/* Los campos ya tienen borde + ring violeta en :focus (mouse y teclado).
+   Añadimos un outline fino solo en teclado para reforzar la ubicación
+   sin duplicar el tratamiento visual del click. */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--violet-light);
+  outline-offset: 1px;
+}
+
+/* ── Micro-interacción: enlaces dentro de prosa ──────────────────
+   Los <a> incrustados en párrafos traducidos (con color inline) no
+   tenían transición. Suavizamos el hover con un cambio de opacidad
+   (no altera el tono, solo su intensidad). */
+main p a,
+.legal a {
+  transition: opacity var(--transition), color var(--transition);
+}
+main p a:hover,
+.legal a:hover { opacity: 0.78; }
 
 /* ── Enlaces de footer / idioma (antes onmouseover/onmouseout inline —
    movidos a CSS puro para poder usar un CSP sin 'unsafe-inline' en script-src) ── */

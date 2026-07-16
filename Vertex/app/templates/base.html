@@ -171,7 +171,7 @@
         </div>
 
         <div>
-          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 0.85rem;">{{ t('footer.servicios_title') }}</h5>
+          <h5 class="footer-heading">{{ t('footer.servicios_title') }}</h5>
           <nav style="display: flex; flex-direction: column; gap: 8px;">
             <a href="{{ url_for('main.servicio_detalle', slug='landing-page') }}" class="footer-link">{{ t('footer.servicio.landing') }}</a>
             <a href="{{ url_for('main.servicio_detalle', slug='frontend') }}" class="footer-link">{{ t('footer.servicio.frontend') }}</a>
@@ -183,7 +183,7 @@
         </div>
 
         <div>
-          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 0.85rem;">{{ t('footer.empresa_title') }}</h5>
+          <h5 class="footer-heading">{{ t('footer.empresa_title') }}</h5>
           <nav style="display: flex; flex-direction: column; gap: 8px;">
             <a href="{{ url_for('main.nosotros') }}" class="footer-link">{{ t('nav.nosotros') }}</a>
             <a href="{{ url_for('main.portafolio') }}" class="footer-link">{{ t('nav.portafolio') }}</a>
@@ -193,7 +193,7 @@
         </div>
 
         <div>
-          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 0.85rem;">{{ t('footer.contacto_title') }}</h5>
+          <h5 class="footer-heading">{{ t('footer.contacto_title') }}</h5>
           <nav style="display: flex; flex-direction: column; gap: 8px;">
             <a href="mailto:contacto.asvertex@gmail.com" class="footer-link" style="display: flex; align-items: center; gap: 6px;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

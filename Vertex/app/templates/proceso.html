@@ -25,7 +25,7 @@
       'detalle': [t('proc.f' ~ i ~ '.d1'), t('proc.f' ~ i ~ '.d2'), t('proc.f' ~ i ~ '.d3'), t('proc.f' ~ i ~ '.d4')],
       'tiempo': t('proc.f' ~ i ~ '.tiempo')
     } %}
-    <div style="display: flex; gap: 2rem; align-items: flex-start; padding: 2.5rem 0; border-bottom: 0.5px solid var(--border);">
+    <div style="display: flex; gap: clamp(1rem, 3vw, 2rem); align-items: flex-start; padding: clamp(1.5rem, 4vw, 2.5rem) 0; border-bottom: 0.5px solid var(--border);">
 
       <!-- Número -->
       <div style="min-width: 56px; text-align: center;">

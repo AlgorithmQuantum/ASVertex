@@ -90,7 +90,7 @@
           
           <div style="display: flex; gap: 8px; margin-top: 10px;">
             {% if p.repo %}
-            <a href="{{ p.repo }}" target="_blank" class="btn btn-ghost" style="padding: 6px 14px; font-size: 12px; border: 1px solid var(--border-color);">
+            <a href="{{ p.repo }}" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 6px 14px; font-size: 12px;">
               {{ t('port.ver_codigo') }}
             </a>
             {% endif %}
