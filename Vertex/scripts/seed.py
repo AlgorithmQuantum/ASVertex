@@ -69,8 +69,9 @@ SERVICIOS = [
 RANGOS = [
     dict(clave='menos5k', etiqueta='Menos de $5,000 MXN', monto_min=0, monto_max=5000, orden=1),
     dict(clave='5k-10k', etiqueta='$5,000 – $10,000 MXN', monto_min=5000, monto_max=10000, orden=2),
-    dict(clave='10k-20k', etiqueta='$10,000 – $20,000 MXN', monto_min=10000, monto_max=20000, orden=3),
-    dict(clave='mas20k', etiqueta='Más de $20,000 MXN', monto_min=20000, monto_max=None, orden=4),
+    dict(clave='10k-15k', etiqueta='$10,000 – $15,000 MXN', monto_min=10000, monto_max=15000, orden=3),
+    dict(clave='15k-25k', etiqueta='$15,000 – $25,000 MXN', monto_min=15000, monto_max=25000, orden=4),
+    dict(clave='mas25k', etiqueta='Más de $25,000 MXN', monto_min=25000, monto_max=None, orden=5),
 ]
 
 CONFIGURACION = [
